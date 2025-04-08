@@ -1,7 +1,7 @@
 .login-button{
     display: flex;
     justify-content: flex-end;
-    margin: 25px;
+    margin: 1rem;
 }
 
 .login-user{
@@ -13,26 +13,33 @@
     justify-content: center;
 }
 
+.menu-area{
+    display: flex;
+    justify-content: center;
+}
+
 .menu-list{
     display: flex;
     list-style-type: none;
 }
 
 .menu-list li{
-    padding: 10px;
-}
-
-.menu-area{
-    display: flex;
-    justify-content: center;
+    padding: 10px;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;/*  --> 한 줄로 표현하고 싶다면 nowrap을 사용하면 된다. */
+    
 }
 
 .nav-search {     
     margin: 25px;
     border-bottom: 1px solid #000;
+    justify-content: right;
+    
 }
 
 .nav-search input{
+    width: 55px;
     outline: none;
     border: none;
 }
