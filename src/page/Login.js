@@ -1,8 +1,36 @@
 import React from 'react'
+import { Form, Button, Container } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+
+const Login = ({setAuthenticate}) => {
+  const navigate = useNavigate()
+  const loginUser = (event) =>{
+    event.preventDefault();
+    setAuthenticate(true);
+    navigate('/')
+  }
   return (
-    <div>Login 페이지</div>
+    <Container>
+      <Form onSubmit={(event)=> loginUser(event)}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>id</Form.Label>
+          <Form.Control type="id" placeholder="Enter id" />
+          <Form.Text className="text-muted">
+            We'll never share your id with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Check me out" />
+        </Form.Group>
+        <Button variant="Danger" type="submit">로그인</Button>
+      </Form>
+    </Container>
   )
 }
 
