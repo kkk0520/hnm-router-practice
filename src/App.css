@@ -72,6 +72,11 @@
     flex-shrink: 0;          
 }
 
+.product-img{
+ display: flex;
+ justify-content: flex-end;
+}
+
 /* 반응형 적용 */
 @media screen and (max-width: 1200px) {
     .menu-search {
