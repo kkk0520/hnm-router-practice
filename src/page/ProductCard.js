@@ -14,7 +14,7 @@ const ProductCard = ({item}) => {
                 <span className="choice-true-text">추천상품</span>
             ) : '\u00A0'}
         <div>{item?.title}</div>
-        <div>{item?.price}</div>
+        <div>{item?.price}원</div>
         <div>{item?.new === true? "신제품" : ""}</div>
     </div>
   )
