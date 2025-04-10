@@ -30,7 +30,7 @@ const Login = ({setAuthenticate}) => {
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-        <Button variant="Danger" type="submit">로그인</Button>
+        <Button variant="danger" type="submit">로그인</Button>
       </Form>
     </Container>
   )
