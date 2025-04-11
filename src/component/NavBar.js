@@ -18,12 +18,15 @@ const NavBar = ({ authenticate, setAuthenticate }) => {
         navigate("/");
     }
 
+    const goToMain = () => {
+        navigate("/");
+    }
+
     const search = (event) =>{
         if(event.key === "Enter"){
            let keyword = event.target.value
            navigate(`/?q=${keyword}`)
         }
-
     }
 
   return (
@@ -35,7 +38,9 @@ const NavBar = ({ authenticate, setAuthenticate }) => {
             </div>
             
             <div className="nav-section">
-                <img width={100} alt="" src="https://th.bing.com/th/id/R.a280ff18ccf4ffddcc7aa3844246ca28?rik=nwrwTuniDz7fyA&riu=http%3a%2f%2fphotos.prnewswire.com%2fprnfull%2f20131009%2fNY95232LOGO&ehk=oyYBCOaR7y9%2fryZSj1hWWeh6uzJUT5PfkSEnr4tCc%2bw%3d&risl=&pid=ImgRaw&r=0" />
+                <img width={100} alt=""
+                    onClick={goToMain} 
+                    src="https://th.bing.com/th/id/R.a280ff18ccf4ffddcc7aa3844246ca28?rik=nwrwTuniDz7fyA&riu=http%3a%2f%2fphotos.prnewswire.com%2fprnfull%2f20131009%2fNY95232LOGO&ehk=oyYBCOaR7y9%2fryZSj1hWWeh6uzJUT5PfkSEnr4tCc%2bw%3d&risl=&pid=ImgRaw&r=0" />
             </div>
             <div className="menu-area">
                 <div>
