@@ -23,41 +23,42 @@ const ProductDetail = () => {
   return (
     <Container>
       <Row>
-        <Col className="product-img">
+        <Col className="product-detail-img">
           <img src={product?.img} />
         </Col>
-        <Col>
-          <div>{product?.choice ? (
-                <span className="choice-true-text">추천상품</span>
-            ) : '\u00A0'}</div>
-          <div>{product?.new ? "신제품" : ""}</div>
-          <div>{product?.title}</div>
-          <div>{product?.price}원</div>
-          {product?.size && Array.isArray(product.size) && (
-              <Dropdown onSelect={(e) => setSelectedSize(e)}>
-                <Dropdown.Toggle
-                  variant="light"
-                  id="dropdown-basic"
-                  className="size-dropdown"
-                >
-                  {selectedSize
-                    ? `사이즈 선택 : ${selectedSize}`
-                    : "사이즈 선택"}
-                </Dropdown.Toggle>
+        <Col>          
+          <div className = "product-detail-info">
+            {product?.choice ? <div className="product-choice"></div> : <div/>}
+            {product?.new ? <div className="product-new"></div> : <div/>}
+                            
+            <div>{product?.title}</div>
+            <div>{product?.price}원</div>
+            {product?.size && Array.isArray(product.size) && (
+                <Dropdown onSelect={(e) => setSelectedSize(e)}>
+                  <Dropdown.Toggle
+                    variant="light"
+                    id="dropdown-basic"
+                    className="size-dropdown"
+                  >
+                    {selectedSize
+                      ? `사이즈 선택 : ${selectedSize}`
+                      : "사이즈 선택"}
+                  </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                  {product.size.map((size, idx) => (
-                    <Dropdown.Item key={idx} eventKey={size}>
-                      {size}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            )}
+                  <Dropdown.Menu>
+                    {product.size.map((size, idx) => (
+                      <Dropdown.Item key={idx} eventKey={size}>
+                        {size}
+                      </Dropdown.Item>
+                    ))}
+                  </Dropdown.Menu>
+                </Dropdown>
+              )}
 
-            <Button variant="danger" className="add-button">
-              추가
-            </Button>      
+              <Button variant="danger" className="add-button">
+                추가
+              </Button>      
+          </div>
         </Col>
       </Row>
     </Container>
